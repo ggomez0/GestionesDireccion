@@ -1,0 +1,200 @@
+const gestiones = [
+    {
+        "nombre": "Planificar la Gestión del Alcance",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto (dentro de estos: plan de gestión de la calidad, descripción del ciclo de vida del proyecto, enfoque de desarrollo), Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Análisis de datos (Análisis de alternativas), Reuniones",
+        "salidas": "Plan para la gestión del alcance, Plan de gestión de los requisitos"
+    },
+    {
+        "nombre": "Recopilar Requisitos",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto, Documentos del proyecto, Documentos de los requisitos, Activos de los procesos de la organización, Factores ambientales",
+        "herramientas": "Juicio de expertos, Recopilación de datos (Entrevistas, Cuestionarios y encuestas, Grupos focales, Talleres), Análisis de datos (Análisis de documentos, Análisis de decisiones), Representación de datos (Diagramas de afinidad, Mapas mentales), Habilidades interpersonales y de equipo (Facilitación, Negociación), Contexto de pensamiento del sistema, Prototipos, Reuniones",
+        "salidas": "Documentación de los requisitos, Matriz de trazabilidad de requisitos"
+    },
+    {
+        "nombre": "Definir el Alcance",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto, Documentos del proyecto, Activos de los procesos de la organización, Factores ambientales",
+        "herramientas": "Juicio de expertos, Análisis de productos, Análisis de alternativas, Habilidades interpersonales y de equipo, Reuniones",
+        "salidas": "Declaración del alcance del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Crear la EDT/WBS",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Descomposición, Habilidades interpersonales y de equipo",
+        "salidas": "Diccionario de la EDT, Línea base del alcance, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Validar el Alcance",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Entregables verificados, Información del desempeño del trabajo",
+        "herramientas": "Inspección, Toma de decisiones (votación)",
+        "salidas": "Entregables aceptados, Información del desempeño del trabajo, Solicitudes de cambio, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Controlar el Alcance",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Información del desempeño del trabajo, Activos de los procesos de la organización",
+        "herramientas": "Análisis de datos (Análisis de variación, Análisis de tendencias), Toma de decisiones (votación), Reuniones",
+        "salidas": "Información del desempeño del trabajo, Solicitudes de cambio, Actualizaciones al plan para la dirección del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Planificar la gestión del cronograma",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Recopilación de datos (Brainstorming, Entrevistas, Cuestionarios y encuestas), Análisis de datos (Análisis de alternativas), Reuniones",
+        "salidas": "Plan de gestión del cronograma"
+    },
+    {
+        "nombre": "Definir las actividades",
+        "entradas": "Plan para la dirección del proyecto, Activos de los procesos de la organización, Factores ambientales",
+        "herramientas": "Juicio de expertos, Descomposición, Planificación gradual, Reuniones",
+        "salidas": "Lista de actividades, Atributos de las actividades, Lista de hitos, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Secuenciar las actividades",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Método de diagramación por precedencia, Determinación e integración de dependencias, Aplicación de adelantos y retrasos, Análisis de datos, Sistema de información para la gestión de proyectos",
+        "salidas": "Diagrama de red del cronograma del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Estimar duración de las actividades",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Estimación análoga, Estimación paramétrica, Estimación por tres valores, Estimación basada en los datos, Análisis de decisiones, Reuniones",
+        "salidas": "Estimaciones de duración de las actividades, Bases de las estimaciones, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Desarrollar el cronograma del proyecto",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Acuerdos, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Análisis de datos (Análisis de simulación, Optimización de recursos, Compresión del cronograma), Juicio de expertos, Sistema de información para la gestión de proyectos, Reuniones",
+        "salidas": "Línea base del cronograma, Cronograma del proyecto, Datos del cronograma, Calendarios del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Controlar el cronograma",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Información del desempeño del trabajo, Calendarios del proyecto, Datos del cronograma, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Análisis de datos (Análisis de desempeño, Análisis de variación, Análisis de tendencias), Sistema de información para la gestión de proyectos, Reuniones",
+        "salidas": "Información del desempeño del trabajo, Pronósticos del cronograma, Solicitudes de cambio, Actualizaciones al plan para la dirección del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Planificar la Gestión de los Costos",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Análisis de datos (Análisis de alternativas), Reuniones",
+        "salidas": "Plan de gestión de los costos"
+    },
+    {
+        "nombre": "Estimar los Costos",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Estimación análoga, Estimación paramétrica, Estimación por tres valores, Análisis de datos (Análisis de alternativas, Análisis de reserva), Software de estimación, Reuniones",
+        "salidas": "Estimaciones de costos, Bases de las estimaciones, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Determinar el Presupuesto",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Acuerdos, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Análisis de datos (Análisis de reserva), Costo límite, Software de gestión de proyectos, Sumas de datos, Reuniones",
+        "salidas": "Línea base de costo, Requisitos de financiamiento del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Controlar los Costos",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Información del desempeño del trabajo, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Análisis de datos (Análisis de desempeño, Análisis de variación, Análisis de tendencias, Análisis de reservas), Sistema de gestión de la información del proyecto",
+        "salidas": "Información del desempeño del trabajo, Pronósticos de costos, Solicitudes de cambio, Actualizaciones al plan para la dirección del proyecto, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Planificar la gestión de las comunicaciones",
+        "entradas": "Acta de constitución del proyecto, Plan para la dirección del proyecto, Documentos del proyecto, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Análisis de datos (Análisis de requisitos de comunicación, Análisis de interesados), Habilidades interpersonales y de equipo, Representación de datos, Reuniones",
+        "salidas": "Plan de gestión de las comunicaciones, Actualizaciones a los documentos del proyecto"
+    },
+    {
+        "nombre": "Gestionar las Comunicaciones",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Informes de desempeño del trabajo, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Tecnologías de la comunicación, Métodos de comunicación, Habilidades interpersonales y de equipo, Sistema de gestión de la información del proyecto, Representación de datos, Reuniones",
+        "salidas": "Comunicaciones del proyecto, Actualizaciones a los documentos del proyecto, Actualizaciones al plan para la dirección del proyecto, Actualizaciones a los activos de los procesos de la organización"
+    },
+    {
+        "nombre": "Monitorear las Comunicaciones",
+        "entradas": "Plan para la dirección del proyecto, Documentos del proyecto, Información del desempeño del trabajo, Factores ambientales, Activos de los procesos de la organización",
+        "herramientas": "Juicio de expertos, Análisis de datos, Sistema de gestión de la información del proyecto, Observación/Conversación, Reuniones",
+        "salidas": "Información del desempeño del trabajo, Solicitudes de cambio, Actualizaciones al plan para la dirección del proyecto, Actualizaciones a los documentos del proyecto, Actualizaciones a los activos de los procesos de la organización"
+    }
+
+];
+
+
+
+
+,
+    {
+        "nombre": "Planificar la gestión del cronograma",
+        "entradas": "ACDP,PD,FA,APO",
+        "herramientas": "JE,RD(B,CE),ADD(AA),R",
+        "salidas": "PGC"
+    },
+    {
+        "nombre": "Definir las actividades",
+        "entradas": "PD,APO,FA",
+        "herramientas": "JE,D,PG,R",
+        "salidas": "LA,A,LLH,ADDP"
+    },
+    {
+        "nombre": "Secuenciar las actividades",
+        "entradas": "PD,DP,FA,APO",
+        "herramientas": "JE,MDP,DI,AD,SI",
+        "salidas": "DNC,ADDP"
+    },
+    {
+        "nombre": "Estimar duración de las actividades",
+        "entradas": "PD,DP,FA,APO",
+        "herramientas": "JE,EA,EP,ETV,ABD,AD,R",
+        "salidas": "ED,BD,ADDP"
+    },
+    {
+        "nombre": "Desarrollar el cronograma del proyecto",
+        "entradas": "PD,DP,A,FA,APO",
+        "herramientas": "ADD(S,O,CC),JE,SIR,R",
+        "salidas": "LBC,CP,D,CP,ADDP"
+    },
+    {
+        "nombre": "Controlar el cronograma",
+        "entradas": "PD,DP,IDT,CP,D,FA,APO",
+        "herramientas": "ADD(P,A,V),SIR,R",
+        "salidas": "IDT,PC,SC,ADPD,ADDP"
+    },
+    {
+        "nombre": "Planificar la Gestión de los Costos",
+        "entradas": "ACDP,PD,FA,APO",
+        "herramientas": "JE,ADD(AA),R",
+        "salidas": "PGC"
+    },
+    {
+        "nombre": "Estimar los Costos",
+        "entradas": "PD,DP,FA,APO",
+        "herramientas": "JE,EA,EP,ETV,ADD(AA,AR),S,R",
+        "salidas": "EC,BD,ADDP"
+    },
+    {
+        "nombre": "Determinar el Presupuesto",
+        "entradas": "PD,DP,A,FA,APO",
+        "herramientas": "JE,ADD(AR),CL,S,SD,R",
+        "salidas": "LBC,RF,ADDP"
+    },
+    {
+        "nombre": "Controlar los Costos",
+        "entradas": "PD,DP,IDT,FA,APO",
+        "herramientas": "ADD(P,V,T,A),SGIP",
+        "salidas": "IDT,PC,SC,ADPD,ADDP"
+    },
+    {
+        "nombre": "Planificar la gestión de las comunicaciones",
+        "entradas": "ACDP,PD,DP,FA,APO",
+        "herramientas": "JE,ADD(R,IE),HIE,R",
+        "salidas": "PGC,ADDP"
+    },
+    {
+        "nombre": "Gestionar las Comunicaciones",
+        "entradas": "PD,DP,IP,FA,APO",
+        "herramientas": "JE,TIC,MC,HIE,SGIP,ADD(R),R",
+        "salidas": "CP,ADDP,ADPD,ADAPO"
+    },
+    {
+        "nombre": "Monitorear las Comunicaciones",
+        "entradas": "PD,DP,IDT,FA,APO",
+        "herramientas": "JE,ADD,S,OC,R",
+        "salidas": "IDT,SC,ADPD,ADDP,ADAPO"
+    }
